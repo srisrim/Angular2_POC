@@ -1,0 +1,34 @@
+<div *ngIf="!isLoggedIn" class="reveal" id="login" data-reveal>
+	<h3 class="text-center">LOGIN</h3>
+	<div class="reveal-body">
+		<div class="row">
+			<div class="small-12 columns">
+				<div class="error callout alert text-center" *ngIf="passwordErr">
+					Username or Password is Incorrect.
+				</div>
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="small-12 columns">
+				<label>
+					<input type="text" placeholder="Username" [(ngModel)]="userName"  aria-describedby="exampleHelpText" required >
+			</label>
+			</div>
+			<div class="small-12 columns">
+				<label>
+					<input type="password" placeholder="Password" [(ngModel)]="password" aria-describedby="exampleHelpText" required >
+			</label>
+			</div>
+			<div class="large-3 small-12 columns">
+				<a (click)="login()" class="button btn-custom">Login</a>
+			</div>
+			<div class="large-3 small-12 columns">
+				<a href="#" class="button btn-custom" data-open="sign-up">Sign Up</a>
+			</div>
+		</div>
+		<button class="close-button" data-close aria-label="Close reveal" type="button">
+    	<span aria-hidden="true">&times;</span>
+  </button>
+	</div>
+</div>

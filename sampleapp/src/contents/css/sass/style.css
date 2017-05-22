@@ -1,0 +1,43 @@
+/*Reuseable Styles*/
+@import url("//fonts.googleapis.com/css?family=Roboto:400,500,700");
+a {
+  color: #fff; }
+
+body {
+  font-family: "Roboto", sans-serif; }
+
+header {
+  background-color: #00a3d6;
+  display: inline-block;
+  width: 100%; }
+
+header .top-bar, header .top-bar ul {
+  background-color: #00a3d6;
+  color: #fff; }
+
+header .menu > li > a {
+  text-transform: uppercase;
+  color: #fff; }
+
+.login-btn {
+  background: #fff;
+  border-radius: 3px;
+  color: #007fbf; }
+
+header .callout {
+  border: none;
+  background-color: transparent;
+  color: #fff; }
+
+footer {
+  position: absolute;
+  width: 100%;
+  bottom: 0; }
+
+footer .menu {
+  text-align: center; }
+
+footer .menu li {
+  display: block; }
+
+/*# sourceMappingURL=style.css.map */
