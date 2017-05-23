@@ -1,6 +1,7 @@
 import { Component, ElementRef, ViewChild } from '@angular/core';
 declare var $: any;
 let foundation = require('contents/js/vendor/foundation.js');
+import { SignUpDetails } from '../signUp/signUp.typeDef'
 
 @Component({
     selector: '<layout>',
@@ -10,10 +11,14 @@ let foundation = require('contents/js/vendor/foundation.js');
 export class layoutComponent {
 
     isLoggedIn: boolean;
+    checkRegisteredUser: SignUpDetails[];
+
 
     constructor(private el: ElementRef) {
-        if (JSON.parse(localStorage.getItem('isLoggedIn')) !== null) {
+        if (JSON.parse(localStorage.getItem('isLoggedIn'))) {
+            debugger;
             this.isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
+            this.checkRegisteredUser = JSON.parse(localStorage.getItem("names"))
         } else {
             this.isLoggedIn = false;
         }
@@ -23,7 +28,7 @@ export class layoutComponent {
     // Loading Foundation JS Here
     ngAfterViewInit() {
         $(this.el.nativeElement.ownerDocument).foundation();
-        
+
     }
 
     isUserLoggedIn(event: any) {

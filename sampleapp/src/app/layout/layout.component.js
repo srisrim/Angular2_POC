@@ -13,8 +13,10 @@ var foundation = require('contents/js/vendor/foundation.js');
 var layoutComponent = (function () {
     function layoutComponent(el) {
         this.el = el;
-        if (JSON.parse(localStorage.getItem('isLoggedIn')) !== null) {
+        if (JSON.parse(localStorage.getItem('isLoggedIn'))) {
+            debugger;
             this.isLoggedIn = JSON.parse(localStorage.getItem('isLoggedIn'));
+            this.checkRegisteredUser = JSON.parse(localStorage.getItem("names"));
         }
         else {
             this.isLoggedIn = false;

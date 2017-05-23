@@ -20,20 +20,17 @@ header {
     display: inline-block;
     width: 100%;
     .menu {
-      .login-btn {
-          background: $white-color;
-          border-radius: 3px;
-          color: $blue-color;
-          &:hover {
-            background-color: #14679e;
-            color: $white-color;
-          }
+      .sub-menu li a:hover {
+        background-color: #0c3d5d;
       }
     }
     .input-group-field {
       &:focus {
         border: 1px solid #fefefe;
       }
+    }
+    .dropdown.menu>li.is-dropdown-submenu-parent>a:after {
+      border-color: $white-color transparent transparent
     }
 }
 header .top-bar, header .top-bar ul {
@@ -50,6 +47,7 @@ header .top-bar, header .top-bar ul {
     background-color: transparent;
     color: #fff;
 }
+
 .callout .button.secondary {
     background-color: #fff;
     color: #777;

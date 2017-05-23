@@ -14,11 +14,34 @@
 						</ul>
 					</div>
 					<div class="top-bar-right">
-						<ul class="menu">
+						<!--<ul class="dropdown menu">
 							<li><a href="#">home</a></li>
 							<li><a href="#">faq</a></li>
 							<li><a href="#" *ngIf="!isLoggedIn" class="button login-btn" data-open="login" (click)=login()>login</a></li>
-							<li><a href="#" *ngIf="isLoggedIn" class="button login-btn" (click)="logOut()">LogOut</a></li>
+							<li *ngIf="isLoggedIn">
+								<a>Item 1</a>
+								<ul class="menu">
+									<li><a href="#0">Welcome Sri</a></li>
+									<li>
+										<a href="#" class="button login-btn" (click)="logOut()">LogOut</a>
+									</li>
+								</ul>
+							</li>
+						</ul>-->
+						<ul class="dropdown menu" data-dropdown-menu>
+							<li><a href="#">home</a></li>
+							<li><a href="#">faq</a></li>
+							<li><a href="#" *ngIf="!isLoggedIn" class="button login-btn" data-open="login" (click)=login()>login</a></li>
+							<li *ngIf="isLoggedIn">
+								<a>Welcome {{this.checkRegisteredUser[0].userName}}</a>
+								<ul class="sub-menu menu">
+									<li><a routerLink="/profile" routerLinkActive="Active">My Profile</a></li>
+									<li>
+										<a href='#0' class="login-btn" (click)="logOut()"> LogOut</a>
+									</li>
+								</ul>
+								
+							</li>
 						</ul>
 					</div>
 				</div>
@@ -42,6 +65,7 @@
 </header>
 
 <div class="row">
+	<router-outlet></router-outlet>
 	<div class="small-12 columns">
 		<filter></filter>
 		<qalist></qalist>

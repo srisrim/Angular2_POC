@@ -10,15 +10,12 @@ header {
   background-color: #00a3d6;
   display: inline-block;
   width: 100%; }
-  header .menu .login-btn {
-    background: #fff;
-    border-radius: 3px;
-    color: #00a3d6; }
-    header .menu .login-btn:hover {
-      background-color: #14679e;
-      color: #fff; }
+  header .menu .sub-menu li a:hover {
+    background-color: #0c3d5d; }
   header .input-group-field:focus {
     border: 1px solid #fefefe; }
+  header .dropdown.menu > li.is-dropdown-submenu-parent > a:after {
+    border-color: #fff transparent transparent; }
 
 header .top-bar, header .top-bar ul {
   background-color: #00a3d6;

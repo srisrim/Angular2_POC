@@ -11,6 +11,32 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var core_1 = require("@angular/core");
 var SignUpComponent = (function () {
     function SignUpComponent() {
+        this.isSignedIn = false;
+        this.registeredUsers = new Array();
+        this.registeredUsersCount = 0;
+        this.isUserNameExist = false;
+        this.resetForm();
+    }
+    SignUpComponent.prototype.ngOnInit = function () {
+        // debugger;
+        // let count = JSON.parse(localStorage.getItem("names")).length;
+        // if (count > 0) {
+        //     this.registeredUsersCount = count + 1;
+        // } else {
+        //     this.registeredUsersCount = 0
+        // }
+    };
+    SignUpComponent.prototype.signUp = function () {
+        debugger;
+        this.checkRegisteredUser = JSON.parse(localStorage.getItem("names"));
+        if (!this.checkRegisteredUser || (this.checkRegisteredUser && this.checkRegisteredUser[0].userName !== this.signUpDetails.userName)) {
+            this.registeredUsers[this.registeredUsersCount] = this.signUpDetails;
+            localStorage.setItem("names", JSON.stringify(this.registeredUsers));
+            this.resetForm();
+            this.isSignedIn = true;
+        }
+    };
+    SignUpComponent.prototype.resetForm = function () {
         this.signUpDetails = {
             email: '',
             firstName: '',
@@ -19,10 +45,6 @@ var SignUpComponent = (function () {
             userName: '',
             password: ''
         };
-    }
-    SignUpComponent.prototype.signUp = function () {
-        console.log(this.signUpDetails);
-        debugger;
     };
     return SignUpComponent;
 }());

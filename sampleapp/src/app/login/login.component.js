@@ -17,7 +17,6 @@ var LoginComponent = (function () {
     Object.defineProperty(LoginComponent.prototype, "value", {
         set: function (value) {
             if (value !== null) {
-                debugger;
                 var isLoggedIn = value;
             }
         },
@@ -27,8 +26,8 @@ var LoginComponent = (function () {
     ;
     LoginComponent.prototype.login = function () {
         debugger;
-        console.log(this.userName, this.password);
-        if (this.userName === 'tavantui' && this.password === 'Demo@123') {
+        this.checkRegisteredUser = JSON.parse(localStorage.getItem("names"));
+        if (this.userName === this.checkRegisteredUser[0].userName && this.password === this.checkRegisteredUser[0].password) {
             this.isLoggedIn = true;
             this.change.emit(this.isLoggedIn);
         }

@@ -1,5 +1,6 @@
 import { Component, EventEmitter, Output, Input } from '@angular/core';
 declare var $: any;
+import { SignUpDetails } from '../signUp/signUp.typeDef'
 
 @Component({
     selector: '<login>',
@@ -10,9 +11,10 @@ export class LoginComponent {
 
     isLoggedIn: boolean;
 
+    checkRegisteredUser: SignUpDetails[];
+
     @Input() set  value(value: any){
         if(value !== null){
-            debugger;
             let isLoggedIn = value;
         }
     };
@@ -25,9 +27,9 @@ export class LoginComponent {
 
 
     login() {
-        debugger;
-        console.log(this.userName, this.password)
-        if (this.userName === 'tavantui' && this.password === 'Demo@123') {
+        debugger
+        this.checkRegisteredUser = JSON.parse(localStorage.getItem("names"))
+        if (this.userName === this.checkRegisteredUser[0].userName && this.password === this.checkRegisteredUser[0].password) {
             this.isLoggedIn = true;
             this.change.emit(this.isLoggedIn);
 

@@ -1,64 +1,46 @@
-<div *ngIf="!isSignedIn" class="reveal" id="sign-up" data-reveal>
-	<form data-abide novalidate>
-		<div data-abide-error class="alert callout" style="display: none;">
-			<p><i class="fi-alert"></i> There are some errors in your form.</p>
-		</div>
-		<h3 class="text-center">Sign Up</h3>
+<div class="myprofile">
+	<form id="my-profile">		
+		<h3 class="text-center">My Profile</h3>
 		<div class="row">
 			<div class="small-12 columns">
 				<label>First Name
 					<input type="text" name="firstName" [(ngModel)]="signUpDetails.firstName" placeholder="First Name" aria-describedby="exampleHelpText" required >
-					<span class="form-error">
-						Yo, you had better fill this out, it's required.
-					</span>
+					
 				</label>
 			</div>
 			<div class="small-12 columns">
 				<label>Second Name
 					<input type="text" name="lastName" [(ngModel)]="signUpDetails.lastName" placeholder="Second Name" aria-describedby="exampleHelpText" required >
-					<span class="form-error">
-						Yo, you had better fill this out, it's required.
-					</span>
+					
 				</label>
 			</div>
 			<div class="small-12 columns">
 				<label>Mobile
 					<input type="number" name="phoneNumber" [(ngModel)]="signUpDetails.phoneNumber" placeholder="Mobile" aria-describedby="exampleHelpText" required  maxlength="10">
-					<span class="form-error">
-						Yo, you had better fill this out, it's required.
-					</span>
+					
 				</label>
 			</div>
 			<div class="small-12 columns">
 				<label>Email
 					<input type="text" name="email" [(ngModel)]="signUpDetails.email" placeholder="Email" aria-describedby="exampleHelpText" required >
-					<span class="form-error">
-						Yo, you had better fill this out, it's required.
-					</span>
+					
 				</label>
 			</div>
 			<div class="small-12 columns">
 				<label>Username
 					<input type="text" name="userName" [(ngModel)]="signUpDetails.userName" placeholder="Username" aria-describedby="exampleHelpText" required >
-					<span class="form-error">
-						Yo, you had better fill this out, it's required.
-					</span>
+					
 				</label>
 			</div>
 			<div class="small-12 columns">
 				<label>Password
 					<input type="password" name="password" [(ngModel)]="signUpDetails.password" placeholder="Password" aria-describedby="exampleHelpText" required>
-					<span class="form-error">
-						Yo, you had better fill this out, it's required.
-					</span>
+					
 				</label>
 			</div>
 			<div class="small-3 columns">
-				<a (click)= "signUp()" class="button">Sign Up</a>
+				<a  class="button">Save Profile</a>
 			</div>
 		</div>
 	</form>
-	<button class="close-button" data-close aria-label="Close reveal" type="button">
-    	<span aria-hidden="true">&times;</span>
-  </button>
 </div>
